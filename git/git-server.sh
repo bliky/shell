@@ -30,7 +30,10 @@ git clone git@47.106.128.182:/home/gitrepo/peco.git
 # 分享代码到Github
 # 添加远程仓库
 git remote add origin git@github.com:bliky/peco.git
-ssh-keygen -t rsa -C "blikylee@126.com"
+ssh-keygen -t rsa -b 4096 -C "blikylee@126.com"
 # 将生成公钥 ~/.ssh/id_rsa.pub 赋值粘贴到GitHub "SSH and GPG keys"中
 # 验证是否能连接到Github
 ssh -T git@github.com
+# 将私钥添加到代理 省去每次push到github输入用户名和密码
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_rsa
