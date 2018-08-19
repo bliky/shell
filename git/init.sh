@@ -1,13 +1,3 @@
-# Git 服务器搭建
-
-# CentOS 安装Git
-yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-devel
-yum install git
-
-# 创建Git用户组和Git用户
-groupadd git
-useradd git -g git
-
 # 创建证书登录
 # 收集所有需要登录的用户的公钥，公钥位于id_rsa.pub文件中，把我们的公钥导入到/home/git/.ssh/authorized_keys文件里，一行一个。
 cd /home/git/
